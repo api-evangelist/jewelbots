@@ -1,7 +1,16 @@
 aid: jewelbots
 name: Jewelbots
-description: Jewelbots is a company surfaced as a portfolio company of 500-global and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Jewelbots makes smart, codable friendship bracelets designed to teach kids
+  (primarily tween girls) to code. The wearable is an Arduino-compatible,
+  Bluetooth Low Energy device built on a Nordic nRF chipset that friends can
+  program with an Arduino IDE library and firmware, with a companion iOS/Android
+  app for pairing and messaging. The project is largely open source: the
+  Jewelbots GitHub organization publishes the Arduino library, firmware,
+  companion app, and hardware/toolchain repositories. Jewelbots was a 500 Global
+  (500 Startups) portfolio company; jewelbots.com now runs as a Shopify
+  storefront. It is a hardware/firmware and education company rather than a web
+  API provider, and exposes no first-party public HTTP/OpenAPI API.
 url: https://raw.githubusercontent.com/api-evangelist/jewelbots/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,11 +18,31 @@ x-backed-by:
 - 500-global
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
+image: https://avatars.githubusercontent.com/u/6186553?v=4
 tags:
 - Company
+- Wearables
+- Hardware
+- IoT
+- Bluetooth
+- Arduino
+- Firmware
+- Education
+- Open Source
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -21,5 +50,16 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/jewelbots-domain-security.yml
+- type: WellKnown
+  url: well-known/jewelbots-well-known.yml
+- type: GitHubOrganization
+  url: https://github.com/Jewelbots
 - type: Website
   url: https://jewelbots.com
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
