@@ -2,22 +2,26 @@ generated: '2026-07-19'
 method: searched
 source: live fetch of https://jewelbots.com/.well-known/*
 host: https://jewelbots.com
-note: >-
-  jewelbots.com is served on Shopify; the openid-configuration and
-  oauth-authorization-server documents are Shopify's storefront customer-account
-  authentication discovery documents (issuer shopify.com/authentication/9355176),
-  not a Jewelbots-authored API. They are recorded here because they resolve 200
-  at the provider host.
-documents:
-- path: /.well-known/openid-configuration
-  status: 200
-  file: jewelbots-openid-configuration.json
-- path: /.well-known/oauth-authorization-server
-  status: 200
-  file: jewelbots-oauth-authorization-server.json
-- path: /.well-known/security.txt
-  status: 404
-- path: /.well-known/api-catalog
-  status: 404
-- path: /.well-known/ai-plugin.json
-  status: 404
+note: jewelbots.com is served on Shopify; the openid-configuration and oauth-authorization-server documents
+  are Shopify's storefront customer-account authentication discovery documents (issuer shopify.com/authentication/9355176),
+  not a Jewelbots-authored API. They are recorded here because they resolve 200 at the provider host.
+hosts:
+- host: https://jewelbots.com
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: jewelbots-openid-configuration.json
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: jewelbots-oauth-authorization-server.json
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+x-shape-fix:
+  converted: '2026-08-20'
+  from: documents
+  note: Rewritten into hosts[] -> documents[], the only shape well_known_docs() in score.rb reads. A served
+    .well-known surface recorded in any other shape scores as absent.
